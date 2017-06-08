@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from reports.models import Country, State, City, StateCount, StateCountTotal, CityCount, CountryCount, RefugeeReport
+from reports.models import Country, State, City, RefugeeReport
 
 def home(request):
     context = {}
