@@ -28,6 +28,9 @@ class RefugeeReport(models.Model):
     state=models.ForeignKey(State)
     city=models.ForeignKey(City)
     year=models.CharField(max_length=255)
+    city_total=models.IntegerField(default=0)
+    state_total=models.IntegerField(default=0)
+    country_total=models.IntegerField(default=0)
     all_countries=models.IntegerField(default=0)
     def __str__(self):
         return "%s, %s from %s" % (self.city.name_slug, self.state.name_slug, self.year)
