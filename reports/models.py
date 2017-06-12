@@ -33,6 +33,6 @@ class RefugeeReport(models.Model):
     country_total=models.IntegerField(default=0, null=True)
     all_countries=models.IntegerField(default=0, null=True)
     def __str__(self):
-        return "%s, %s from %s" % (self.city.name_slug, self.state.name_slug, self.year)
+        return "%s, %s from %s" % (self.city, self.state, self.year)
     def get_absolute_url(self):
         return "/reports/%s/%s/%s" % (self.city.name_slug, self.state.name_slug, self.year)

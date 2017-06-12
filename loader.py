@@ -23,8 +23,7 @@ for row in reader:
 
     popcity = row[6]
     popcity_slug = slugify(popcity)
-    popcityid, popcityadded = City.objects.get_or_create(name=popcity, name_slug=popcity_slug)
+    popcityid, popcityadded = City.objects.get_or_create(state=refstateid, name=popcity, name_slug=popcity_slug)
 
-    ref = RefugeeReport(country=reforiginid, state=refstateid, city=popcityid, year=row[1], city_total=row[6], state_total=row[2], country_total=row[4], all_countries=row[7])
+    ref, refcreated = RefugeeReport.objects.get_or_create(country=reforiginid, state=refstateid, city=popcityid, year=row[1], city_total=row[6], state_total=row[2], country_total=row[4], all_countries=row[7])
     print(ref)
-    ref.save()
