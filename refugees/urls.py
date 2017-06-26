@@ -18,6 +18,7 @@ from django.contrib import admin
 from reports import views
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
     url(r'^$', views.home),
     url(r'^reports/$', views.state_list),
     url(r'^reports/(?P<state_slug>[\w-]+)/$', views.city_list),

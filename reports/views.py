@@ -2,9 +2,8 @@ from django.shortcuts import render
 
 from reports.models import Country, State, City, RefugeeReport
 
-def home(request):
-    context = {}
-    return render(request, 'index.html', context)
+def index(request):
+    return render(request, 'index.html', {})
 
 def state_list(request):
     states = State.objects.order_by('name')
