@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
-<!DOCTYPE html>
-<html lang="en">
+
 
 {% block title %}Refugee Reporting Resource{% endblock %}
 
-  <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  </head>
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function() {
+    $("input#autocomplete").autocomplete({
+      source: [
+           {% for object in cities %}
+           { value: "{{ object.cityname }}, {{ object.state }}", url: '{{ object.get_absolute_url }}' },
+           {% endfor %}
+      ],
+        select: function (event, ui) {
+            window.location = ui.item.url;
+        }
+    });
+});
+</script>
+{% endblock %}
+
 
 {% block content %}
 
@@ -26,7 +38,7 @@
       <div class="form-group">
         <label class="sr-only" for="exampleInputAmount">Enter your state or city</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Enter your state or city">
+          <input type="text" class="form-control" id="input" placeholder="Enter your state or city">
         </div>
       </div>
       <button type="submit" class="btn btn-primary">»</button>
@@ -34,21 +46,6 @@
       <div class="col-md-4"></div>
     </form>
     </div>
-
-{% block javascript %}
-    $(document).ready(function() {
-    $("input#autocomplete").autocomplete({
-      source: [
-           {% for object in cities %}
-           { value: "{{ object.cityname }}, {{ object.state }}", url: '{{ object.get_absolute_url }}' },
-           {% endfor %}
-      ],
-        select: function (event, ui) {
-            window.location = ui.item.url;
-        }
-    });
-});
-{% endblock %}
 
   <!-- explainers & about -->
 
