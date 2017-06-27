@@ -3,7 +3,9 @@ from django.shortcuts import render
 from reports.models import Country, State, City, RefugeeReport
 
 def index(request):
-    return render(request, 'index.html', {})
+    cities = City.objects.order_by('name')
+    context = {'cities': cities}
+    return render(request, 'index.html', context)
 
 def about(request):
     return render(request, 'about.html', {})
