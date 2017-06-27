@@ -5,6 +5,9 @@ from reports.models import Country, State, City, RefugeeReport
 def index(request):
     return render(request, 'index.html', {})
 
+def about(request):
+    return render(request, 'about.html', {})
+
 def state_list(request):
     states = State.objects.order_by('name')
     context = {'states': states}

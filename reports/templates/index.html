@@ -4,12 +4,12 @@
 
 {% block title %}Refugee Reporting Resource{% endblock %}
 
-{% block content %}
-
   <head>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   </head>
+
+{% block content %}
 
   <body>
     <div class="jumbotron">
@@ -35,6 +35,21 @@
     </form>
     </div>
 
+{% block javascript %}
+    $(document).ready(function() {
+    $("input#autocomplete").autocomplete({
+      source: [
+           {% for object in cities %}
+           { value: "{{ object.cityname }}, {{ object.state }}", url: '{{ object.get_absolute_url }}' },
+           {% endfor %}
+      ],
+        select: function (event, ui) {
+            window.location = ui.item.url;
+        }
+    });
+});
+{% endblock %}
+
   <!-- explainers & about -->
 
     <HR>
@@ -46,17 +61,18 @@
           <div class="col-md-5">
             <h2>Refugee coverage 101</h2>
             <p>Key terms, historical context and the refugee resettlement process explained.</p>
-            <button type="button" class="btn btn-default btn-xs">Learn more</button>
+            <button type="button" class="btn btn-default btn-xs"><a href="#">Learn more</a></button>
           </div>
           <div class="col-md-5">
             <h2>About this project</h2>
             <p>The Refugee Reporting Resource was created to help newsrooms more effectively cover the refugee populations in their coverage areas. </p>
-            <button type="button" class="btn btn-default btn-xs">Learn more</button>
+            <button type="button" class="btn btn-default btn-xs"><a href="/about">Learn more</a></button>
           <div class="col-md-1"></div>
           </div>
       </div>
     </div>
   </body>
 
-{% endblock %}
 </html>
+
+{% endblock %}
