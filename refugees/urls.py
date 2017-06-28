@@ -19,6 +19,7 @@ from reports import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^background_info/$', views.background_info, name='background_info'),
     url(r'^about/$', views.about, name='about'),
     url(r'^reports/$', views.state_list),
     url(r'^reports/(?P<state_slug>[\w-]+)/$', views.city_list),

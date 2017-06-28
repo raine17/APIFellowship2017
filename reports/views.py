@@ -7,6 +7,9 @@ def index(request):
     context = {'cities': cities}
     return render(request, 'index.html', context)
 
+def background_info(request):
+    return render(request, 'background_info.html', {})
+
 def about(request):
     return render(request, 'about.html', {})
 
