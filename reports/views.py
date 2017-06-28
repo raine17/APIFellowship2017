@@ -23,8 +23,8 @@ def city_list(request, state_slug):
 
 def country_list(request, state_slug, city_slug):
     state = State.objects.get(name_slug=state_slug)
-    city = City.objects.get(name_slug=city_slug)
-    countries = Country.objects.filter(city=city)
+    city = City.objects.get(name_slug=city_slug, state__name_slug=state_slug)
+    countries = RefugeeReport.objects.filter(city=city)
     context = {'state': state, 'city': city, 'countries': countries}
     return render(request, 'country_list.html', context)
 
