@@ -1,11 +1,9 @@
-<h1>{{ city }}, {{ state }}</h1>
+<h1>Refugees resettled in {{ city }}, {{ state }}</h1>
 
-<p>Remember: Things fetched with get don't need to loop.</p>
-
-<p>Things fetched with filter, do have to loop</p>
-
+{% block content %}
 <ul>
 {% for object in countries %}
-<li>{{ object.city_total }} came from {{ object.country }} in {{ object.year }}</li>
+{{ city_sum }}
 {% endfor %}
 </ul>
+{% endblock %}
