@@ -1,13 +1,6 @@
 from django.shortcuts import render
-
 from reports.models import Country, State, City, RefugeeReport
-
 from django.db.models import Sum
-
-filter_city = City.objects.get(id=1)
-filter_reports = RefugeeReport.objects.filter(city=filter_city)
-city_sum = filter_reports.aggregate(Sum('city_total'))
-country_totals = RefugeeReport.objects.filter(city=filter_city).values('country__name').annotate(total=Sum('city_total')).order_by('-country_totals')
 
 def index(request):
     cities = City.objects.order_by('name')
@@ -35,7 +28,13 @@ def country_list(request, state_slug, city_slug):
     state = State.objects.get(name_slug=state_slug)
     city = City.objects.get(name_slug=city_slug, state__name_slug=state_slug)
     countries = RefugeeReport.objects.filter(city=city)
+
     context = {'state': state, 'city': city, 'countries': countries, 'city_sum': city_sum}
+
+    all_refugee_total = RefugeeReport.objects.filter(city=city).aggregate(Sum('city_total'))
+    country_totals = RefugeeReport.objects.filter(city=city).values('country__name').annotate(total=Sum('city_total')).order_by('-total')
+    context = {'country_totals': country_totals, 'all_refugee_total': all_refugee_total, 'state': state, 'city': city, 'countries': countries}
+
     return render(request, 'country_list.html', context)
 
 def country_detail(request, state_slug, city_slug, country_slug):
