@@ -1,11 +1,42 @@
-<h1>{{ city }}, {{ state }}</h1>
+{% extends 'base.html' %}
 
-<p>Remember: Things fetched with get don't need to loop.</p>
+{% block content %}
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
 
-<p>Things fetched with filter, do have to loop</p>
+    <h1>{{ city }}, {{ state }}</h1>
 
-<ul>
-{% for object in countries %}
-<li>{{ object.city_total }} came from {{ object.country }} in {{ object.year }}</li>
-{% endfor %}
-</ul>
+    <h3>{{ all_refugee_total.city_total__sum }} have been resettled here.</h3>
+
+    Top contries list
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Country</th> <th>Total since 2002</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in country_totals %}
+        <tr> <td>{{ object.country__name }}</td> <td>{{ object.total }}</td> </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <p>Remember: Things fetched with get don't need to loop.</p>
+
+    <p>Things fetched with filter, do have to loop</p>
+
+    <ul>
+    {% for object in countries %}
+    <li>{{ object.city_total }} came from {{ object.country }} in {{ object.year }}</li>
+    {% endfor %}
+    </ul>
+
+
+
+</div>
+  <div class="col-md-2"></div>
+</div>
+{% endblock %}
