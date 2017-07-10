@@ -7,6 +7,9 @@ def index(request):
     context = {'cities': cities}
     return render(request, 'index.html', context)
 
+def resources_page(request):
+    return render(request, 'resources_page.html', {})
+
 def background_info(request):
     return render(request, 'background_info.html', {})
 
@@ -28,8 +31,6 @@ def country_list(request, state_slug, city_slug):
     state = State.objects.get(name_slug=state_slug)
     city = City.objects.get(name_slug=city_slug, state__name_slug=state_slug)
     countries = RefugeeReport.objects.filter(city=city)
-
-    context = {'state': state, 'city': city, 'countries': countries, 'city_sum': city_sum}
 
     all_refugee_total = RefugeeReport.objects.filter(city=city).aggregate(Sum('city_total'))
     country_totals = RefugeeReport.objects.filter(city=city).values('country__name').annotate(total=Sum('city_total')).order_by('-total')
