@@ -19,7 +19,7 @@
       </thead>
       <tbody>
         {% for object in country_totals %}
-        <tr> <td>{{ object.country__name }}</td> <td>{{ object.total }}</td> </tr>
+        <tr> <td><a href="{{ object.name_slug }}/">{{ object.name }}</a></td> <td>{{ object.total }}</td> </tr>
         {% endfor %}
       </tbody>
     </table>
