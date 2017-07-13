@@ -7,9 +7,9 @@
 
     <h1>{{ city }}, {{ state }}</h1>
 
-    <h3>{{ all_refugee_total.city_total__sum }} have been resettled here.</h3>
+    <h3>{{ all_refugee_total.city_total__sum }} have been resettled here since 2002.</h3>
 
-    Top contries list
+    Top countries of origin
 
     <table class="table table-striped">
       <thead>
@@ -24,17 +24,23 @@
       </tbody>
     </table>
 
-    <p>Remember: Things fetched with get don't need to loop.</p>
+Data from the <a href="http://ireports.wrapsnet.org/" target=blank>Refugee Processing Center</a>
 
-    <p>Things fetched with filter, do have to loop</p>
+<br></br>
+<br></br>
 
-    <ul>
-    {% for object in countries %}
-    <li>{{ object.city_total }} came from {{ object.country }} in {{ object.year }}</li>
-    {% endfor %}
-    </ul>
+</div>
+  <div class="col-md-2"></div>
+</div>
 
+<div class="row">
+  <div class="col-md-5"></div>
+  <div class="col-md-2"><button type="button" class="btn btn-primary btn-lg btn-block"><a href="/resources_page">Getting started</a></button></div>
+  <div class="col-md-5"></div>
+</div>
 
+<br></br>
+<br></br>
 
 </div>
   <div class="col-md-2"></div>
