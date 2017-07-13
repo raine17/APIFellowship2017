@@ -5,6 +5,8 @@ class Country(models.Model):
     name_slug=models.SlugField()
     def __str__(self):
         return self.name
+    def get_absolute_url(self):
+        return "/reports/%s/%s/%s" % (self.refugeereport.city.name_slug, self.refugeereport.state.name_slug, self.name_slug)
 
 class State(models.Model):
     name=models.CharField(max_length=255, blank=True, null=True)
