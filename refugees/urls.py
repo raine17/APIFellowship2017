@@ -21,11 +21,10 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^background_info/$', views.background_info, name='background_info'),
     url(r'^about/$', views.about, name='about'),
-    url(r'^reports/$', views.state_list),
+    url(r'^state_list/$', views.state_list),
     url(r'^reports/(?P<state_slug>[\w-]+)/$', views.city_list),
     url(r'^reports/(?P<state_slug>[\w-]+)/(?P<city_slug>[\w-]+)/$', views.country_list),
     url(r'^reports/(?P<state_slug>[\w-]+)/(?P<city_slug>[\w-]+)/(?P<country_slug>[\w-]+)/$', views.country_detail),
     url(r'^admin/', admin.site.urls),
     url(r'^resources_page/$', views.resources_page, name='resources_page'),
-    url(r'^explore_data/$', views.explore_data, name='explore_data'),
 ]

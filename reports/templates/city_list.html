@@ -1,5 +1,31 @@
-<h1>{{ state }}</h1>
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Cities in {{ state }}<br>
+</div>
+<div class="row"></div>
 
-{% for object in cities %}
-<p><a href="{{ object.get_absolute_url }}">{{ object.name }}, {{ state }}</a></p>
-{% endfor %}
+  <div class="row">
+  <div class="col-md-1"> </div>
+  <div class="col-md-4"
+  <p>There are [#] cities in {{ state }} that refugees have been resettled in.</p>
+  <p>[#] total refugees have been resettled in {{ state }}.</p>
+  <br>
+  <h6>Data from Data from the <a href="http://ireports.wrapsnet.org/" target=blank>Refugee Processing Center.</a></h6>
+</div>
+  <div class="col-md-4">
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+    {% for object in cities %}
+    <tr> <td><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+{% endblock %}

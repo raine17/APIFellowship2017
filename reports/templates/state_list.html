@@ -1,3 +1,27 @@
-{% for object in state %}
-<p><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></p>
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="jumbotron">
+      <h1>Explore data</h1><br>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Select a state to begin: </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for object in state %}
+    <tr> <td><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

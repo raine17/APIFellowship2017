@@ -16,13 +16,6 @@ def background_info(request):
 def about(request):
     return render(request, 'about.html', {})
 
-def explore_data(request, state_slug):
-    state = State.objects.get(name_slug=state_slug)
-
-    state_totals = RefugeeReport.objects.filter(state=state).values('year').annotate(total=Sum('city_total')).order_by('year')
-    context = {'state': state, 'cities': cities}
-    return render(request, 'city_list.html', context)
-
 def state_list(request):
     state = State.objects.order_by('name')
     context = {'state': state}
