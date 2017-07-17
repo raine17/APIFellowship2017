@@ -16,10 +16,13 @@ def background_info(request):
 def about(request):
     return render(request, 'about.html', {})
 
-def state_list(request):
-    states = State.objects.order_by('name')
-    context = {'states': states}
-    return render(request, 'state_list.html', context)
+def explore_data(request, state_slug):
+    state = State.objects.get(name_slug=state_slug)
+    cities = City.objects.filter(state__name_slug=state_slug)
+
+    state_totals = RefugeeReport.objects.filter(state=state).values('year').annotate(total=Sum('city_total')).order_by('year')
+    context = {'state': state, 'cities': cities}
+    return render(request, 'city_list.html', context)
 
 def city_list(request, state_slug):
     state = State.objects.get(name_slug=state_slug)

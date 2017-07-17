@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^reports/(?P<state_slug>[\w-]+)/(?P<city_slug>[\w-]+)/(?P<country_slug>[\w-]+)/$', views.country_detail),
     url(r'^admin/', admin.site.urls),
     url(r'^resources_page/$', views.resources_page, name='resources_page'),
+    url(r'^explore_data/$', views.state_list, name='explore_data'),
 ]
