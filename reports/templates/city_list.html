@@ -1,0 +1,5 @@
+<h1>{{ state }}</h1>
+
+{% for object in cities %}
+<p><a href="{{ object.get_absolute_url }}">{{ object.name }}, {{ state }}</a></p>
+{% endfor %}
