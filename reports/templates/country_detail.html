@@ -5,6 +5,21 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
 
-    <h1>Refugees resettled from {{ object.name }} in {{ city }}, {{ state }}</h1>
+    <h1>Refugees resettled from {{ country }} in {{ city }}, {{ state }}</h1>
+    <h3>{{ city_refugee_total.city_total__sum }} have been resettled here since 2002.</h3>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Year</th> <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in reports %}
+        <tr> <td>{{ object.year }}</td> <td>{{ object.city_total }}</td> </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
 
 {% endblock %}

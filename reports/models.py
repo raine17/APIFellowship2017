@@ -12,7 +12,7 @@ class State(models.Model):
     def __str__(self):
         return self.name
     def get_absolute_url(self):
-        return "/reports/%s" % self.name_slug
+        return "/reports/%s" % (self.name_slug)
 
 class City(models.Model):
     state=models.ForeignKey(State, on_delete=models.CASCADE)

@@ -19,13 +19,12 @@
       </thead>
       <tbody>
         {% for object in country_totals %}
-        <tr> <td><a href="/reports/{{ object.state_slug }}/{{ object.city_slug }}/{{ object.name }}/">{{ object.name }}</a></td> <td>{{ object.total }}</td> </tr>
         <tr> <td><a href="{{ object.name_slug }}/">{{ object.name }}</a></td> <td>{{ object.total }}</td> </tr>
         {% endfor %}
       </tbody>
     </table>
 
-Data from the <a href="http://ireports.wrapsnet.org/" target=blank>Refugee Processing Center</a>
+Data from the <a href="http://ireports.wrapsnet.org/" target=blank>Refugee Processing Center.</a> Last updated July 2017
 
 <br></br>
 <br></br>
