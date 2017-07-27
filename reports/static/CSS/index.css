@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
-* {
-  font-family: serif;
+p {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-size: 12px;
+}
+
+h3 {
+  font-family: 'Gudea', sans-serif;
+  font-size: 14px;
 }
