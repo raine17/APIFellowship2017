@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 <head>
 {% block title %}Refugee Reporting Resource{% endblock %}
 
-<link href="/index.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
 {% block javascript %}
 
@@ -31,21 +32,13 @@
     });
 });
 </script>
+<link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
 {% endblock %}
 </head>
 
 {% block content %}
-  <body>
-    <header class="main-header" role="banner" align="center">
-  <img src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/VREGBD55LR.jpg" alt="Banner Image"/>
-</header>
-    <div class="jumbotron">
-        <h1>Refugee Reporting Resource</h1><br>
-        <p>Helping journalists cover their own refugee communities</p>
-    </div>
-
-  <!-- search bar -->
-
+  <div class="wrapper">
+    <img src="https://www.americanpressinstitute.org/wp-content/uploads/2017/07/background3.png" style="width:100%;" border="0" alt="Null">
     <div class="row">
       <br>
       <br>
@@ -67,10 +60,15 @@
     <br>
     <br>
     </div>
+    <br>
+    <br>
 
   <!-- explainers & about -->
-
-<HR>
+<br>
+<br>
+<img src="https://www.americanpressinstitute.org/wp-content/uploads/2017/07/divider.png" style="width:100%;" border="0" alt="Null">
+<br>
+<br>
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-4">
@@ -81,7 +79,7 @@
           </h3>
         </div>
       <div class="panel-body">
-        <p>Key terms, resettlment process and more explained.</p>
+        <p>Key terms, resettlement process and more explained.</p>
         <br>
       </div>
     </div>
@@ -101,5 +99,7 @@
     </div>
     </div>
   </div>
+</div>
+
 
 {% endblock %}
