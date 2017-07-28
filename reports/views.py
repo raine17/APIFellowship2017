@@ -16,6 +16,9 @@ def background_info(request):
 def about(request):
     return render(request, 'about.html', {})
 
+def stories(request):
+    return render(request, 'stories.html', {})
+
 def state_list(request):
     state = State.objects.order_by('name')
     context = {'state': state}
