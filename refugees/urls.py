@@ -17,6 +17,9 @@ from django.conf.urls import url
 from django.contrib import admin
 from reports import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^background_info/$', views.background_info, name='background_info'),
@@ -27,5 +30,5 @@ urlpatterns = [
     url(r'^reports/(?P<state_slug>[\w-]+)/(?P<city_slug>[\w-]+)/(?P<country_slug>[\w-]+)/$', views.country_detail),
     url(r'^admin/', admin.site.urls),
     url(r'^resources_page/$', views.resources_page, name='resources_page'),
-    url(r'^stories/$', views.stories, name='stories'), 
-]
+    url(r'^stories/$', views.stories, name='stories'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
