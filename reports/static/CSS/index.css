@@ -1,11 +1,17 @@
 @charset "UTF-8";
 
-p {
+* {
   font-family: 'Lato', 'Helvetica', sans-serif;
   font-size: 12px;
+  background-color: #A7A7A9, gray;
 }
 
 h3 {
   font-family: 'Gudea', sans-serif;
   font-size: 14px;
+}
+
+.panel-heading {
+  background-color: #EDF6FF, white;
+  border-color: #453F3C, brown;
 }
