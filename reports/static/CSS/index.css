@@ -11,7 +11,7 @@ h3 {
   font-size: 14px;
 }
 
-.panel-heading {
-  background-color: #EDF6FF, white;
-  border-color: #453F3C, brown;
+.panel {
+  background-color: #EDF6FF;
+  border-color: #453F3C;
 }

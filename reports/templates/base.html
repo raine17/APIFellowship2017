@@ -1,10 +1,15 @@
 {% load static %}
 <!doctype html>
 <html>
+<head>
     <title>{% block title %}{% endblock %}</title>
     <meta charset="UTF-8">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    {% block customstyle %}{% endblock %}
+    
     <script src="https://code.jquery.com/jquery-2.2.1.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -14,7 +19,8 @@
     });
     </script>
     {% block javascript %} {% endblock %}
-
+<head>
+<body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,4 +46,5 @@
 </nav>
 {% block content %}
 {% endblock %}
+</body>
 </html>
