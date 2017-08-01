@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block javascript %}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -32,7 +33,7 @@
 
     <h1>{{ city }}, {{ state }}</h1>
 
-    <h3>{{ all_refugee_total.city_total__sum }} have been resettled here since 2002.</h3>
+    <h3>{{ all_refugee_total.city_total__sum|intcomma }} have been resettled here since 2002.</h3>
 
     <div id="chart" style="width: 100%"></div>
 
@@ -46,7 +47,7 @@
       </thead>
       <tbody>
         {% for object in country_totals %}
-        <tr> <td><a href="{{ object.name_slug }}/">{{ object.name }}</a></td> <td>{{ object.total }}</td> </tr>
+        <tr> <td><a href="{{ object.name_slug }}/">{{ object.name }}</a></td> <td>{{ object.total|intcomma }}</td> </tr>
         {% endfor %}
       </tbody>
     </table>
