@@ -35,10 +35,10 @@ def country_list(request, state_slug, city_slug):
     state = State.objects.get(name_slug=state_slug)
     city = City.objects.get(name_slug=city_slug, state__name_slug=state_slug)
     countries = RefugeeReport.objects.filter(city=city)
-
+    city_by_year = RefugeeReport.objects.filter(city=city).values('year').annotate(total=Sum('city_total')).order_by('year')
     all_refugee_total = RefugeeReport.objects.filter(city=city).aggregate(Sum('city_total'))
     country_totals = Country.objects.filter(refugeereport__city=city).annotate(total=Sum('refugeereport__city_total')).order_by('-total')
-    context = {'country_totals': country_totals, 'all_refugee_total': all_refugee_total, 'state': state, 'city': city, 'countries': countries}
+    context = {'country_totals': country_totals, 'all_refugee_total': all_refugee_total, 'state': state, 'city': city, 'countries': countries, 'city_by_year': city_by_year}
     return render(request, 'country_list.html', context)
 
 def country_detail(request, state_slug, city_slug, country_slug):

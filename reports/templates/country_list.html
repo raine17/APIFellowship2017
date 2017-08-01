@@ -1,5 +1,30 @@
 {% extends 'base.html' %}
 
+{% block javascript %}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Refugees'],
+          {% for object in city_by_year %}['{{ object.year }}',  {{ object.total }}],{% endfor %}
+        ]);
+
+        var options = {
+          title: 'Refugees by year',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+{% endblock %}
+
 {% block content %}
 <div class="row">
   <div class="col-md-2"></div>
@@ -8,6 +33,8 @@
     <h1>{{ city }}, {{ state }}</h1>
 
     <h3>{{ all_refugee_total.city_total__sum }} have been resettled here since 2002.</h3>
+
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
     Top countries of origin
 
