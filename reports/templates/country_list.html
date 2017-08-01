@@ -18,7 +18,7 @@
           legend: { position: 'bottom' }
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart'));
 
         chart.draw(data, options);
       }
@@ -34,7 +34,7 @@
 
     <h3>{{ all_refugee_total.city_total__sum }} have been resettled here since 2002.</h3>
 
-    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    <div id="chart" style="width: 100%"></div>
 
     Top countries of origin
 
