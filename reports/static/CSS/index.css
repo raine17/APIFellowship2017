@@ -3,7 +3,7 @@
 * {
   font-family: 'Lato', 'Helvetica', sans-serif;
   font-size: 12px;
-  background-color: #A7A7A9, gray;
+  background-color: #2E5266;
 }
 
 h3 {
@@ -12,6 +12,15 @@ h3 {
 }
 
 .panel {
-  background-color: #EDF6FF;
-  border-color: #453F3C;
+  background-color: white;
+  border-color: #ebebeb;
+}
+
+.btn {
+  background-color: #ebebeb;
+  color: #ebebeb;
+}
+
+.button {
+  color: #ebebeb;
 }
