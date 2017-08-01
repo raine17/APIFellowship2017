@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 <html lang="en">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   </head>
   <body>
-<img src="https://www.americanpressinstitute.org/wp-content/uploads/2017/07/resources-md.png" style="width:100%;" border="0" alt="Null">
+<img src="{% static 'img/resources.png' %}" style="width:100%;" border="0" alt="Null">
 <br>
 <br>
       <div class="col-md-2"></div>

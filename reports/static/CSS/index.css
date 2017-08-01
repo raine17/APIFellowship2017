@@ -3,7 +3,12 @@
 * {
   font-family: 'Lato', 'Helvetica', sans-serif;
   font-size: 12px;
-  background-color: #2E5266;
+  background-color: #FBF5F3, white;
+}
+
+h2 {
+  font-family: 'Gudea', sans-serif;
+  font-size: 14px;
 }
 
 h3 {
@@ -11,16 +16,50 @@ h3 {
   font-size: 14px;
 }
 
+a {
+  color: #FF8966;
+}
+
+a hover {
+  color: #FFC4B2;
+}
+
+h3 a {
+  font-family: 'Gudea', sans-serif;
+  font-size: 16px;
+  color: #FBF5F3 !important;
+  align: center;
+}
+
 .panel {
   background-color: white;
   border-color: #ebebeb;
 }
 
+#bs-override panel-heading {
+  background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #FBF5F3, white;
+  border-color: #2E5266;
+}
+
 .btn {
-  background-color: #ebebeb;
-  color: #ebebeb;
+  background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #FBF5F3, white;
+  border-color: #2E5266;
+}
+
+.btn:hover {
+  background-color: #2E5266;
+  background-image: none);
+  color: #FBF5F3, white;
+  border-color: #2E5266;
 }
 
 .button {
-  color: #ebebeb;
+  color: #2E5266;
+  background-color: #6E8898;
 }

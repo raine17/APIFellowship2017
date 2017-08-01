@@ -3,5 +3,21 @@
 * {
   font-family: 'Lato', 'Helvetica', sans-serif;
   font-size: 12px;
+  background-color: #FBF5F3, white;
+}
+
+.navbar {
   background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  color: #FBF5F3, white;
+  border-color: #2E5266;
+}
+
+nav.navbar.navbar-default {
+  background-color: #FBF5F3;
+  background-repeat: none;
+}
+
+p {
+  color: #2E5266;
 }
