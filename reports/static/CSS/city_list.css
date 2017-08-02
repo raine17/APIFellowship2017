@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+div.jumbotron#bso {
+  background-color: #6E8898;
+  color: #FFFFFF;
+}
+
+a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #A5D1BF;
+}
+
+a:hover {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #88AC9D;
+}

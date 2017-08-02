@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block customstyle %}
+<link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +23,12 @@
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
-      <p>The Refugee Reporting Resource was created to help newsrooms provide more complete and multi-dimensional coverage of local refugee communities. To accomplish this, the American Press Institute worked with summer fellow Emily Case to develop a guide that includes a searchable refugee resettlement database and resources about covering local refugee communities. </p>
-      <p>If you have any questions or comments about the project, contact <a href='mailto:hello@americanpressinstitute.org' target=blank>hello@americanpressinstitute.org</a>.</p>
+      <p id="intro">The Refugee Reporting Resource was created to help newsrooms provide more complete and multi-dimensional coverage of local refugee communities. To accomplish this, the American Press Institute worked with summer fellow Emily Case to develop a guide that includes a searchable refugee resettlement database and resources about covering local refugee communities. </p>
+      <p id="intro">If you have any questions or comments about the project, contact <a href='mailto:hello@americanpressinstitute.org' target=blank id="intro">hello@americanpressinstitute.org</a>.</p>
+<br>
     <p align="center">***</p>
     <h2>Acknowledgements</h2>
-    <p>Special thanks to Matt Waite and Michelle Hassler of the University of Nebraska-Lincoln College of Journalism and Mass Communications for their support, guidance and advice.</p>
+    <p id="intro">Special thanks to Matt Waite and Michelle Hassler of the University of Nebraska-Lincoln College of Journalism and Mass Communications for their support, guidance and advice.</p>
     </div>
       <div class="col-md-2"></div>
     </div>

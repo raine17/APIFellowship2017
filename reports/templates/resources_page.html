@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block customstyle %}
+<link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/resources_page.css' %}" />
+{% endblock %}
 {% block content %}
 
 <html lang="en">
@@ -13,8 +17,8 @@
 <br>
 <br>
       <div class="col-md-2"></div>
-      <div class="col-md-8">
-        <p><a href="/state_list/">Refugee resettlement data</a> is an entry point into new stories, but it can only provide so much information. It can't illustrate important nuances like religious minorities, births and deaths, or previously resettled communities, for example.
+      <div class="col-md-9">
+        <p id="intro"><a href="/state_list/" id="intro">Refugee resettlement data</a> is an entry point into new stories, but it can only provide so much information. It can't illustrate important nuances like religious minorities, births and deaths, or previously resettled communities, for example.
         <br><br>
       This is where reporting comes in. Contacting community leaders and local refugee resettlement agencies is an important first step in connecting to refugee communities and learning about stories behind the numbers. For more information about best practices in covering refugee populations, read our strategy study below.
         </p>
@@ -31,8 +35,8 @@
   <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">
-          <a href="https://www.iom.int/key-migration-terms" target=blank>Key migration terms</a>
+        <h3 class="panel-title" id="bs-override">
+          <a href="https://www.iom.int/key-migration-terms" target=blank id="bso">Key migration terms</a>
         </h3>
       </div>
     <div class="panel-body">

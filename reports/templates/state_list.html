@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block customstyle %}
+<link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/state_list.css' %}"/>
+{% endblock %}
 {% block content %}
 
 <img src="{% static 'img/explore.png' %}" style="width:100%;" border="0" alt="Null">

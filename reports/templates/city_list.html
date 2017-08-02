@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block customstyle %}
+<link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/city_list.css' %}"/>
+{% endblock %}
 {% block content %}
-<div class="jumbotron">
+<div class="jumbotron" id="bso">
   <h1>Cities in {{ state }}<br>
 </div>
 <div class="row"></div>

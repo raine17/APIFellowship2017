@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.table>tbody>tr>td, .table>tfoot>tr>td {
+  border-top: 1px solid #B9B5B5;
+}
+
+.table>tbody>tr>td, .table>tfoot>tr>td {
+  background-color: solid #9B9596;
+}
+
+a {
+  color: #A5D1BF;
+}
+
+a:hover {
+  color: #77A391;
+}
+
+.btn>btn-primary>btn-large>btn-block {
+  background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #FBF5F3, white;
+  border-color: #2E5266;
+}
+
+.btn>btn-primary>btn-large>btn-block:hover {
+  background-color: #2E5266;
+  background-image: none);
+  color: #FBF5F3, white;
+  border-color: #2E5266;
+}
+
+.btn>btn-primary>btn-large>btn-block>a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #FBF5F3, white;
+}
+
+.button {
+  color: #2E5266;
+  background-color: #6E8898;
+}

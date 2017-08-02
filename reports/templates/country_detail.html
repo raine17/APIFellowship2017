@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block customstyle %}
+<link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/country_detail.css' %}"/>
+{% endblock %}
 {% block content %}
 <div class="row">
   <div class="col-md-2"></div>

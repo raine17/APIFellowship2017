@@ -7,15 +7,23 @@
 }
 
 .navbar {
-  background-color: #6E8898;
-  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  background-color: #E4E9EC;
+  background-image: linear-gradient(to bottom,#F6F8F9,#E5EAED 100%);
   color: #FBF5F3, white;
-  border-color: #2E5266;
+  border-color: none;
 }
 
 nav.navbar.navbar-default {
   background-color: #FBF5F3;
   background-repeat: none;
+}
+
+nav.navbar.navbar-default a {
+  color: #2E5266;
+}
+
+nav.navbar.navbar-default a:hover {
+  color: #223C4B;
 }
 
 p {
