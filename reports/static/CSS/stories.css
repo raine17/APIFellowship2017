@@ -36,16 +36,16 @@ div.panel-default>.panel-heading>a#bso {
   color: #E4E9EC, white;
 }
 
-p#intro {
+p {
   font-size: 16px;
 }
 
-a#intro {
+a {
   font-size: 16px;
   color: #A5D1BF;
 }
 
-a#intro:hover {
+a:hover {
   font-size: 16px;
   color: #77A391;
 }

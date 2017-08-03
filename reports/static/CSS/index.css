@@ -6,6 +6,10 @@
   background-color: #FBF5F3, white;
 }
 
+p {
+  color: black !important;
+}
+
 h2 {
   font-family: 'Gudea', sans-serif;
   font-size: 14px;

@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-    {% block customstyle %}{% endblock %}
+    {% block customstyle %}
+    <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
+    {% endblock %}
 
     <script src="https://code.jquery.com/jquery-2.2.1.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

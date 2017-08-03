@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load humanize %}
+{% block customstyle %}
+<link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/country_detail.css' %}"/>
+{% endblock %}
 
 {% block javascript %}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -70,7 +74,7 @@ Data from the <a href="http://ireports.wrapsnet.org/" target=blank>Refugee Proce
 
 <div class="row">
   <div class="col-md-5"></div>
-  <div class="col-md-2"><button type="button" class="btn btn-primary btn-lg btn-block"><a href="/resources_page">Getting started</a></button></div>
+  <div class="col-md-2"><a href="/resources_page" id="bso"><button type="button" class="btn btn-primary btn-lg btn-block" id="bso">Getting started</button></a></div>
   <div class="col-md-5"></div>
 </div>
 
