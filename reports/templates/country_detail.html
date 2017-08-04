@@ -1,8 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block customstyle %}
 <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'css/country_detail.css' %}"/>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Refugees'],
+          {% for object in city_by_year %}['{{ object.year }}',  {{ object.total }}],{% endfor %}
+        ]);
+
+        var options = {
+          title: 'Refugees by year',
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          colors:['#FF8966', '#91C7B1', '#2E5266'],
+          animation: {
+            startup: true,
+            duration: 1000,
+            easing: 'out',
+                      }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -10,7 +41,9 @@
   <div class="col-md-8">
 
     <h1>Refugees resettled from {{ country }} in {{ city }}, {{ state }}</h1>
-    <h3>{{ city_refugee_total.city_total__sum }} have been resettled here since 2002.</h3>
+    <h3>{{ city_refugee_total.city_total__sum|intcomma }} have been resettled here since 2002.</h3>
+
+    <div id="chart" style="width: 100%"></div>
 
     <table class="table table-striped">
       <thead>
