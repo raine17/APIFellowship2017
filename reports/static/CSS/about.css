@@ -10,7 +10,7 @@ p {
   color: black !important;
 }
 
-h2 {
+h2 #about {
   font-family: 'Gudea', sans-serif;
   font-size: 14px;
   color: #547181 !important;
@@ -89,4 +89,24 @@ a#intro:hover {
 .panel a {
   font-family: 'Lato', 'Helvetica', sans-serif;
   color: #EBEFF1, white;
+}
+
+.navbar {
+  background-color: #E4E9EC;
+  background-image: linear-gradient(to bottom,#F7F9FA,#F6F8F9 100%);
+  color: #FBF5F3, white;
+  border-color: none;
+}
+
+nav.navbar.navbar-default {
+  background-color: #FBF5F3;
+  background-repeat: none;
+}
+
+nav.navbar.navbar-default a {
+  color: #2E5266;
+}
+
+nav.navbar.navbar-default a:hover {
+  color: #223C4B;
 }

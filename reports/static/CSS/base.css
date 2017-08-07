@@ -8,7 +8,7 @@
 
 .navbar {
   background-color: #E4E9EC;
-  background-image: linear-gradient(to bottom,#F6F8F9,#E5EAED 100%);
+  background-image: linear-gradient(to bottom,#F7F9FA,#F6F8F9 100%);
   color: #FBF5F3, white;
   border-color: none;
 }
@@ -28,4 +28,26 @@ nav.navbar.navbar-default a:hover {
 
 p {
   color: #2E5266;
+}
+
+.navbar-nav {
+  float:none;
+}
+
+.navbar-nav li {
+  display:inline-block;
+  float:none;
+  }
+
+footer {
+  background-color: #E4E9EC;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+p #footer {
+  font-size: inherit;
+  text-align: center;
+  align: center;
 }

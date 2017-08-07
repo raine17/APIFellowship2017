@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+{% block title %}About{% endblock %}
+
 {% block customstyle %}
 <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}" />
 {% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-
 {% block content %}
-
-  <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  </head>
 
   <body>
 <img src="{% static 'img/about.png' %}" style="width:100%;" border="0" alt="Null">
@@ -27,10 +26,11 @@
       <p id="intro">If you have any questions or comments about the project, contact <a href='mailto:hello@americanpressinstitute.org' target=blank id="intro">hello@americanpressinstitute.org</a>.</p>
 <br>
     <p align="center">***</p>
-    <h2>Acknowledgements</h2>
+    <h2 id="about">Acknowledgements</h2>
     <p id="intro">Special thanks to Matt Waite and Michelle Hassler of the University of Nebraska-Lincoln College of Journalism and Mass Communications for their support, guidance and advice.</p>
     </div>
       <div class="col-md-2"></div>
     </div>
-
+<br>
+<br>
 {% endblock %}

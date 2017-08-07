@@ -21,16 +21,22 @@ a:hover {
   font-family: 'Lato', 'Helvetica', sans-serif;
   color: #E4E9EC;
   border-color: #2E5266;
+  text-decoration: none !important;
 }
 
 .btn:hover {
   background-color: #2E5266;
   background-image: none;
-  color: #E4E9EC;
+  color: #EBEFF1;
   border-color: #2E5266;
+  text-decoration: none !important;
 }
 
-.button {
-  color: #E4E9EC;
-  background-color: #6E8898;
+a#bso {
+  color: #EBEFF1 !important;
+  text-decoration: none !important;
+}
+
+body {
+  padding-bottom: none;
 }

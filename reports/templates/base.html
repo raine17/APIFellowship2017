@@ -18,12 +18,13 @@
     <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
 
+    {% block javascript %}
     <script>
     $(document).ready(function () {
         $('.dropdown-toggle').dropdown();
     });
     </script>
-    {% block javascript %} {% endblock %}
+    {% endblock %}
 
 <head>
 <body>
@@ -42,7 +43,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a class="navbar-brand" href="#"><a href="/">API</a></a></li>
+        <li><a class="navbar-brand" href="#"><a href="/"><img src="{% static 'img/API.png' %}" style="height: 40%; width:40%;" border="0" alt="Null"></a></a></li>
         <li><a href="/state_list">Explore data</a></li>
         <li><a href="/resources_page">Resources</a></li>
         <li><a href="/about">About</a></li>
@@ -51,6 +52,12 @@
   </div><!-- /.container-fluid -->
 </nav>
 {% block content %}
+{% endblock %}
+{% block footer %}
+<footer>
+  <br>
+  <p id="footer">© American Press Institute 2017, all rights reserved.</p>
+</footer>
 {% endblock %}
 </body>
 </html>

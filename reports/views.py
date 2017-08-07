@@ -21,7 +21,8 @@ def stories(request):
 
 def state_list(request):
     state = State.objects.order_by('name')
-    context = {'state': state}
+    cities = City.objects.order_by('name')
+    context = {'state': state, 'cities': cities}
     return render(request, 'state_list.html', context)
 
 def city_list(request, state_slug):

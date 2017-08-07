@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block customstyle %}
 <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{% static 'css/resources_page.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/resources_page.css' %}"/>
 {% endblock %}
-{% block content %}
 
-<html lang="en">
-  <head>
-    <title>Resources</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  </head>
+<head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+{% block title %}Resources{% endblock %}
+{% block content %}
   <body>
 <img src="{% static 'img/resources.png' %}" style="width:100%;" border="0" alt="Null">
 <br>
@@ -160,6 +161,5 @@
   </div>
   </div>
 </div>
-
 
 {% endblock %}

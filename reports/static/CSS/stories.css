@@ -36,18 +36,24 @@ div.panel-default>.panel-heading>a#bso {
   color: #E4E9EC, white;
 }
 
-p {
+p#body {
   font-size: 16px;
+  color: black;
 }
 
-a {
-  font-size: 16px;
+h3>a {
+  font-size: 14px;
   color: #A5D1BF;
 }
 
-a:hover {
-  font-size: 16px;
+h3>a:hover {
+  font-size: 14px;
   color: #77A391;
+}
+
+h3 {
+  font-family: 'Gudea', sans-serif;
+  font-size: 14px;
 }
 
 .panel-title>a {
@@ -61,8 +67,4 @@ a:hover {
 
 .panel-body>h6 {
   color: #BBBFC2;
-}
-
-p {
-  color: black;
 }
