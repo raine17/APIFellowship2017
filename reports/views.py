@@ -48,7 +48,7 @@ def country_detail(request, state_slug, city_slug, country_slug):
     state = State.objects.get(name_slug=state_slug)
     country = Country.objects.get(name_slug=country_slug)
     city = City.objects.get(name_slug=city_slug, state__name_slug=state_slug)
-    city_by_year = RefugeeReport.objects.filter(city=city).values('year').annotate(total=Sum('city_total')).order_by('year')
+    city_by_year = RefugeeReport.objects.filter(country=country, city=city).values('year').annotate(total=Sum('city_total')).order_by('year')
     all_refugee_total = RefugeeReport.objects.filter(city=city).aggregate(Sum('city_total'))
     city_refugee_total = RefugeeReport.objects.filter(country=country, city=city).aggregate(Sum('city_total'))
     reports = RefugeeReport.objects.filter(country=country, city=city).order_by('year')
