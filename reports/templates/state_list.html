@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/state_list.css' %}"/>
 {% endblock %}
 {% block javascript %}
-<script
+<script>
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
@@ -27,8 +27,16 @@
 {% endblock %}
 
 {% block content %}
+<body>
 <img src="{% static 'img/explore.png' %}" style="width:100%;" border="0" alt="Null">
 <br>
+<br>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-9">
+    <p id="bso">DESCRIPTION HERE!</p>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-5">
@@ -63,4 +71,5 @@
             </table>
           </div>
         </div>
+</body>
 {% endblock %}

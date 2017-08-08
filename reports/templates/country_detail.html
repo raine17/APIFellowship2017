@@ -47,14 +47,14 @@
   <div class="col-md-8">
 
     <h1>Refugees resettled from {{ country }} in {{ city }}, {{ state }}</h1>
-    <h3>{{ city_refugee_total.city_total__sum|intcomma }} have been resettled here since 2002.</h3>
+    <h3>{{ city_refugee_total.city_total__sum|intcomma }} refugees have been resettled in {{ city }} since 2002.</h3>
 
     <div id="chart" style="width: 100%"></div>
 
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Year</th> <th>Total</th>
+          <th>Year</th> <th>Number of refugees resettled</th>
         </tr>
       </thead>
       <tbody>
@@ -63,8 +63,8 @@
         {% endfor %}
       </tbody>
     </table>
+    <h6>Data from the <a href="http://ireports.wrapsnet.org/" target=blank>Refugee Processing Center</a> 2002-2017</h6>
   </div>
-</div>
 </div>
   <div class="col-md-2"></div>
 </div>

@@ -33,31 +33,33 @@
 {% block content %}
   <div class="wrapper">
     <img src="{% static 'img/background3.png' %}" style="width:100%;" border="0" alt="Null">
+<div class="text-center">
   <div class="row">
-    <div class="col-xs-4"></div>
-    <div class="col-xs-4"><h2>Helping journalists cover their own refugee communities</h2></div>
+    <div class="col-xs-12"><h2 id="tagline"><i>Helping journalists cover their own refugee communities</i></h2></div>
   </div>
+</div>
     <br>
     <br>
+  <div class="text-center">
     <div class="row">
-      <div class="col-xs-4"></div>
-      <div class="col-xs-4"><h2>Learn about refugees in your area.</h2></div>
+      <div class="col-xs-12"><h3>Learn about refugees in your area.</h3></div>
     </div>
-    <br>
-    <div class="row">
-      <div class="col-xs-4"></div>
-      <div class="col-xs-6">
-        <form class="form-inline">
-          <div class="form-group">
-            <label class="sr-only" for="exampleInputAmount">Enter your city</label>
-          <div class="input-group">
-          <input type="text" class="form-control" id="autocomplete" placeholder="Enter your city">
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">»</button>
-      </div>
-    </form>
   </div>
+  <div class="row" align="center">
+    <div class="col-xs-12">
+      <form class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputAmount">Enter your city</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="autocomplete" placeholder="Enter your city">
+              <button type="submit" class="btn btn-primary">»</button>
+            </input>
+          </div>
+        </div>
+      </form>
+  </div>
+</div>
+
     <br>
     <br>
     <br>
@@ -78,13 +80,15 @@
             <a href="/resources_page">How to understand and cover refugee communities</a>
           </h3>
         </div>
+    <div class="center-block">
       <div class="panel-body">
         <p>Wondering where to start? Check out information about refugees, resettlement and best coverage practices.</p>
         <br>
-        <button type="button" class="btn btn-primary btn-xs" align="center">Learn more</button>
+            <button type="button" class="btn btn-primary btn-xs"><a href="/resources_page">Learn more</a></button>
+          </div>
       </div>
     </div>
-    </div>
+  </div>
 
 <img src="{% static 'img/divider.png' %}" style="width:100%;" border="0" alt="Null">
 

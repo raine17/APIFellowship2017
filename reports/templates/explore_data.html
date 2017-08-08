@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block customstyle %}
+<link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/country_detail.css' %}"/>
+{% endblock %}
+{% block title %}Explore refugee data{% endblock %}
 {% block content %}
-<img src="https://www.americanpressinstitute.org/wp-content/uploads/2017/07/explore-sm.jpg" style="width:100%;" border="0" alt="Null">
+<body>
+<img src="{% static 'img/explore.png' %}" style="width:100%;" border="0" alt="Null">
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8">
@@ -12,3 +18,5 @@
         {% for object in state_totals %}
       {{ object.name }} {{ object.total }}
         {% endfor %}
+</body>
+{% endblock %}

@@ -10,17 +10,18 @@ p {
   color: black !important;
 }
 
-h2 {
+h2#tagline>i {
   font-family: 'Gudea', 'Helvetica', sans-serif;
-  font-size: 20px;
-  font-style: thin, italic;
-  color: #547181 !important;
+  font-size: 20px !important;
+  font-style: thin, italic !important;
+  color: #547181;
   align: center center;
 }
 
 h3 {
   font-family: 'Gudea', sans-serif;
   font-size: 14px;
+  color: #547181;
 }
 
 h3 a {
@@ -95,4 +96,14 @@ a#intro:hover {
 
 button.btn.btn-primary.btn-xs {
   align: center center center center !important;
+}
+
+button.btn.btn-primary.btn-xs>a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #EBEFF1;
+}
+
+button.btn.btn-primary.btn-xs>a:hover {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #F5F7F8;
 }
