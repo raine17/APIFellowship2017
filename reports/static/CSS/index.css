@@ -11,9 +11,11 @@ p {
 }
 
 h2 {
-  font-family: 'Gudea', sans-serif;
-  font-size: 14px;
+  font-family: 'Gudea', 'Helvetica', sans-serif;
+  font-size: 20px;
+  font-style: thin, italic;
   color: #547181 !important;
+  align: center center;
 }
 
 h3 {
@@ -89,4 +91,8 @@ a#intro:hover {
 .panel a {
   font-family: 'Lato', 'Helvetica', sans-serif;
   color: #EBEFF1, white;
+}
+
+button.btn.btn-primary.btn-xs {
+  align: center center center center !important;
 }

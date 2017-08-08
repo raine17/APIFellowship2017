@@ -20,7 +20,7 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Refugees'],
-          {% for object in city_by_year %}['{{ object.year }}',  {{ object.total }}],{% endfor %}
+          {% for object in city_by_year %}['{{ object.year }}',  '{{ city_refugee_total }}'],{% endfor %}
         ]);
 
         var options = {

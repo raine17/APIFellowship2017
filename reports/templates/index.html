@@ -32,68 +32,62 @@
 
 {% block content %}
   <div class="wrapper">
-    <img src="{% static 'img/background.png' %}" style="width:100%;" border="0" alt="Null">
+    <img src="{% static 'img/background3.png' %}" style="width:100%;" border="0" alt="Null">
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4"><h2>Helping journalists cover their own refugee communities</h2></div>
+  </div>
+    <br>
+    <br>
     <div class="row">
-      <br>
-      <br>
-      <br>
-      <div class="col-md-4"></div>
-      <div class="col-md-4>">
-    <form class="form-inline">
-      <div class="form-group">
-        Learn about refugees in your area. <label class="sr-only" for="exampleInputAmount">Enter your city</label>
-        <div class="input-group">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4"><h2>Learn about refugees in your area.</h2></div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-6">
+        <form class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount">Enter your city</label>
+          <div class="input-group">
           <input type="text" class="form-control" id="autocomplete" placeholder="Enter your city">
         </div>
       </div>
       <button type="submit" class="btn btn-primary">»</button>
       </div>
-      <div class="col-md-4"></div>
     </form>
+  </div>
     <br>
-    <br>
-    <br>
-    </div>
     <br>
     <br>
 
-  <!-- explainers & about -->
+    <br>
+    <br>
+
+  <!-- about -->
 <br>
 <br>
-<img src="{% static 'img/divider.png' %}" style="width:100%;" border="0" alt="Null">
-<br>
-<br>
+
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-4">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title" id="bs-override">
-            <a href="/resources_page">Refugee coverage 101</a>
+            <a href="/resources_page">How to understand and cover refugee communities</a>
           </h3>
         </div>
       <div class="panel-body">
-        <p>Key terms, resettlement process and more explained.</p>
+        <p>Wondering where to start? Check out information about refugees, resettlement and best coverage practices.</p>
         <br>
+        <button type="button" class="btn btn-primary btn-xs" align="center">Learn more</button>
       </div>
     </div>
     </div>
 
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <a href="/about">About this project</a>
-          </h3>
-        </div>
-      <div class="panel-body">
-        <p>The Refugee Reporting Resource was created to help newsrooms more effectively cover the refugee populations in their coverage areas.</p>
-        <br>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
+<img src="{% static 'img/divider.png' %}" style="width:100%;" border="0" alt="Null">
 
-
+<br>
+<br>
 {% endblock %}
