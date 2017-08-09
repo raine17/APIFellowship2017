@@ -4,7 +4,7 @@
 {% block title %}Refugee Reporting Resource{% endblock %}
 
 {% block javascript %}
-<script>
+<script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
@@ -23,11 +23,24 @@
     });
 });
 </script>
+
+<script>
+$(document).ready(function () {
+    $('.dropdown-toggle').dropdown();
+});
+</script>
+
 {% endblock %}
 
 {% block customstyle %}
 <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+
+<style>
+.ui-menu {
+    background:white;
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -47,16 +60,15 @@
   </div>
   <div class="row" align="center">
     <div class="col-xs-12">
-      <form class="form-inline">
-        <div class="form-group">
+    <form class="form-inline">
+          <div class="form-group">
           <label class="sr-only" for="exampleInputAmount">Enter your city</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="autocomplete" placeholder="Enter your city">
-              <button type="submit" class="btn btn-primary">»</button>
-            </input>
+            <input type="text" class="form-control" id="autocomplete" placeholder="Enter your city"></input>
+            <button type="submit" class="btn btn-primary">»</button>
+
           </div>
-        </div>
-      </form>
+
+     </form>
   </div>
 </div>
 
