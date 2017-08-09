@@ -5,9 +5,10 @@
 <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'css/city_list.css' %}"/>
 {% endblock %}
+{% block title %}Cities in {{ state }}{% endblock %}
 {% block content %}
 <div class="jumbotron" id="bso">
-  <h1>Cities in {{ state }}<br>
+  <h1>Cities in {{ state }}</h1><br>
 </div>
 <div class="row"></div>
 

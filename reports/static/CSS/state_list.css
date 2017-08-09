@@ -41,12 +41,24 @@ a:hover {
   background-color: #6E8898;
 }
 
-h3 {
+h3>b {
   font-family: 'Gudea', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
+  color: #547181;
+}
+
+th>h3>b {
+  font-family: 'Gudea', sans-serif;
+  font-size: 24px;
+  color: #547181;
 }
 
 .form-control:focus {
   border-color: #C4CFD5;
   box-shadow: inset 0 1px 1px #A2B3BD, 0 0 8px #2E5266;
+}
+
+p#bso {
+  font-size: 16px;
+  color: black;
 }

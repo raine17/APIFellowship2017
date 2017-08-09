@@ -72,3 +72,9 @@ a#intro:hover {
 p {
   color: black;
 }
+
+h2>b {
+  font-family: 'Gudea', sans-serif;
+  font-size: 24px;
+  color: #547181 !important;
+}

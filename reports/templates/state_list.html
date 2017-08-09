@@ -4,6 +4,7 @@
 <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'css/state_list.css' %}"/>
 {% endblock %}
+{% block title %}Explore refugee data{% endblock %}
 {% block javascript %}
 <script>
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
@@ -34,13 +35,13 @@
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-9">
-    <p id="bso">DESCRIPTION HERE!</p>
+    <p id="bso">What do you know about the refugees living in your community? This resource allows you to learn more about refugees in your area.</p>
   </div>
 </div>
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-5">
-<h3>Search by city</h3>
+<h3><b>Search by city<b></h3>
         <form class="form-inline">
           <div class="form-group">
             <label class="sr-only" for="exampleInputAmount">Enter city here</label>
@@ -60,7 +61,7 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th><h3>Or select a state: </h3></th>
+                  <th><h3><b>Select a state</b></h3></th>
                 </tr>
               </thead>
               <tbody>
