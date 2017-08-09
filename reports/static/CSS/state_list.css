@@ -82,3 +82,8 @@ p#bso {
   font-size: 16px;
   color: black;
 }
+
+.input#autocomplete {
+  background-color: white;
+  list-style: none;
+}

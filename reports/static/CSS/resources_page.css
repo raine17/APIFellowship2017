@@ -78,3 +78,37 @@ h2>b {
   font-size: 24px;
   color: #547181 !important;
 }
+
+button.btn.btn-primary.btn-xs>a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #EBEFF1;
+}
+
+button.btn.btn-primary.btn-xs>a:hover {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #F5F7F8;
+}
+
+.btn {
+  background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #E4E9EC;
+  border-color: #2E5266;
+}
+
+.btn:hover {
+  background-color: #2E5266;
+  background-image: none;
+  color: #E4E9EC;
+  border-color: #2E5266;
+}
+
+.button {
+  color: #E4E9EC;
+  background-color: #6E8898;
+}
+
+.btn>a {
+  text-decoration: none;
+}

@@ -3,10 +3,16 @@
 {% block customstyle %}
 <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'css/state_list.css' %}"/>
+<style>
+.ui-menu {
+    background:white;
+    list-style-type: none;
+}
+</style>
 {% endblock %}
 {% block title %}Explore refugee data{% endblock %}
 {% block javascript %}
-<script>
+<script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
@@ -25,6 +31,13 @@
     });
 });
 </script>
+
+<script>
+$(document).ready(function () {
+    $('.dropdown-toggle').dropdown();
+});
+</script>
+
 {% endblock %}
 
 {% block content %}
