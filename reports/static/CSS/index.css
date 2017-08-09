@@ -17,7 +17,7 @@ h2#tagline>i {
   align: center center;
 }
 
-h3#home {
+h3#home>b {
   font-family: 'Gudea', sans-serif;
   font-size: 16px;
   color: #547181;
@@ -111,4 +111,9 @@ button.btn.btn-primary.btn-xs>a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.input#autocomplete {
+  background-color: white;
+  list-style: none;
 }
