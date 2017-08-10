@@ -23,6 +23,7 @@ a:hover {
 div.panel-heading>div.panel-title>a {
   font-family: 'Lato', 'Helvetica', sans-serif;
   color: #E4E9EC, white;
+  text-decoration: none;
 }
 
 div.panel-default>.panel-heading {
@@ -111,4 +112,29 @@ button.btn.btn-primary.btn-xs>a:hover {
 
 .btn>a {
   text-decoration: none;
+}
+
+button.btn.btn-primary.btn-xs.center-block>a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #EBEFF1;
+}
+
+button.btn.btn-primary.btn-xs.center-block>a:hover {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #F5F7F8;
+}
+
+button.btn.btn-primary.btn-xs.center-block {
+  background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #E4E9EC;
+  border-color: #2E5266;
+}
+
+button.btn.btn-primary.btn-xs.center-block:hover {
+  background-color: #2E5266;
+  background-image: none;
+  color: #E4E9EC;
+  border-color: #2E5266;
 }

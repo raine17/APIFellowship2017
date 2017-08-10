@@ -68,3 +68,142 @@ h3 {
 .panel-body>h6 {
   color: #BBBFC2;
 }
+.panel {
+  background-color: white;
+  border-color: #ebebeb;
+}
+
+.panel a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #EBEFF1, white;
+}
+
+a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #A5D1BF;
+}
+
+a:hover {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #88AC9D;
+}
+
+div.panel-heading>div.panel-title>a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #E4E9EC, white;
+}
+
+div.panel-default>.panel-heading {
+  background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  background-repeat: none;
+}
+
+div.panel-default>.panel-heading>a#bso {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #E4E9EC, white;
+}
+
+p#bso {
+  font-size: 16px;
+  color: black;
+}
+
+a#intro {
+  font-size: 16px;
+  color: #A5D1BF;
+}
+
+a#intro:hover {
+  font-size: 16px;
+  color: #77A391;
+}
+
+.panel-title>a {
+  color: #E4E9EC !important;
+  font-size: 14px;
+}
+
+.panel-title>a:hover {
+  color: #FBFCFC !important;
+  font-size: 14px;
+}
+
+.panel-body>p {
+  font-size: 14px;
+}
+
+.panel-body>h6 {
+  color: #BBBFC2;
+}
+
+p {
+  color: black;
+}
+
+h2>b {
+  font-family: 'Gudea', sans-serif;
+  font-size: 24px;
+  color: #547181 !important;
+}
+
+button.btn.btn-primary.btn-xs>a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #EBEFF1;
+}
+
+button.btn.btn-primary.btn-xs>a:hover {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #F5F7F8;
+}
+
+.btn {
+  background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #E4E9EC;
+  border-color: #2E5266;
+}
+
+.btn:hover {
+  background-color: #2E5266;
+  background-image: none;
+  color: #E4E9EC;
+  border-color: #2E5266;
+}
+
+.button {
+  color: #E4E9EC;
+  background-color: #6E8898;
+}
+
+.btn>a {
+  text-decoration: none;
+}
+
+button.btn.btn-primary.btn-xs.center-block>a {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #EBEFF1;
+  text-decoration: none;
+}
+
+button.btn.btn-primary.btn-xs.center-block>a:hover {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #F5F7F8;
+  text-decoration: none;
+}
+
+button.btn.btn-primary.btn-xs.center-block {
+  background-color: #6E8898;
+  background-image: linear-gradient(to bottom,#6E8898,#2E5266 100%);
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  color: #E4E9EC;
+  border-color: #2E5266;
+}
+
+button.btn.btn-primary.btn-xs.center-block:hover {
+  background-color: #2E5266;
+  background-image: none;
+  color: #E4E9EC;
+  border-color: #2E5266;
+}
