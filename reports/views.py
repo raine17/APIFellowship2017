@@ -11,9 +11,9 @@ from bakery.views import BuildableListView, BuildableDetailView, BuildableTempla
 class Index(BuildableListView):
   model = City
   template_name = "index.html"
-  cities = City.objects.order_by('name')
-  context = {'cities': cities}
-  queryset = context
+  #cities = City.objects.order_by('name')
+  #context = {'cities': cities}
+  queryset = City.objects.order_by('name')
 
 def resources_page(request):
     return render(request, 'resources_page.html', {})
