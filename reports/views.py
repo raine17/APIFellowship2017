@@ -1,11 +1,18 @@
 from django.shortcuts import render
 from reports.models import Country, State, City, RefugeeReport
 from django.db.models import Sum
+from bakery.views import BuildableListView, BuildableDetailView, BuildableTemplateView
 
-def index(request):
-    cities = City.objects.order_by('name')
-    context = {'cities': cities}
-    return render(request, 'index.html', context)
+#def index(request):
+    #cities = City.objects.order_by('name')
+    #context = {'cities': cities}
+    #return render(request, 'index.html', context)
+
+class Index(BuildableListView):
+  template_name = "index.html"
+  cities = City.objects.order_by('name')
+  context = {'cities': cities}
+  queryset = context
 
 def resources_page(request):
     return render(request, 'resources_page.html', {})
