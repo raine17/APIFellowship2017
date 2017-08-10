@@ -13,7 +13,7 @@
     $(document).ready(function() {
     $("input#autocomplete").autocomplete({
       source: [
-           {% for object in cities %}
+           {% for object in city_list %}
            { value: "{{ object.name }}, {{ object.state }}", url: '{{ object.get_absolute_url }}' },
            {% endfor %}
       ],

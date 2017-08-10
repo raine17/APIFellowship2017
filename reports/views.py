@@ -9,6 +9,7 @@ from bakery.views import BuildableListView, BuildableDetailView, BuildableTempla
     #return render(request, 'index.html', context)
 
 class Index(BuildableListView):
+  model = City
   template_name = "index.html"
   cities = City.objects.order_by('name')
   context = {'cities': cities}
