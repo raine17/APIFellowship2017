@@ -3,20 +3,13 @@ from reports.models import Country, State, City, RefugeeReport
 from django.db.models import Sum
 from bakery.views import BuildableListView, BuildableDetailView, BuildableTemplateView
 
-#def index(request):
-    #cities = City.objects.order_by('name')
-    #context = {'cities': cities}
-    #return render(request, 'index.html', context)
-
 class Index(BuildableListView):
-  model = City
   template_name = "index.html"
-  #cities = City.objects.order_by('name')
-  #context = {'cities': cities}
   queryset = City.objects.order_by('name')
 
-def resources_page(request):
-    return render(request, 'resources_page.html', {})
+class ResourcePage(BuildableTemplateView):
+    build_path = 'resources/index.html'
+    template_name = 'resources_page.html'
 
 def background_info(request):
     return render(request, 'background_info.html', {})
@@ -27,20 +20,23 @@ def about(request):
 def stories(request):
     return render(request, 'stories.html', {})
 
-def state_list(request):
-    state = State.objects.order_by('name')
-    cities = City.objects.order_by('name')
-    context = {'state': state, 'cities': cities}
-    return render(request, 'state_list.html', context)
+class StateList(BuildableListView):
+    template_name = 'state_list.html'
+    queryset = State.objects.order_by('name')
 
-def city_list(request, state_slug):
-    state = State.objects.get(name_slug=state_slug)
-    state_totals = RefugeeReport.objects.filter(state=state).values('year').annotate(total=Sum('city_total')).order_by('year')
-    cities = City.objects.filter(state__name_slug=state_slug).order_by('name')
-    count_cities = len(cities)
-    statewide_sum = RefugeeReport.objects.filter(state=state).aggregate(total=Sum('city_total'))
-    context = {'state': state, 'cities': cities, 'state_totals': state_totals, 'count_cities' : count_cities, 'statewide_sum' : statewide_sum}
-    return render(request, 'city_list.html', context)
+class CityList(BuildableDetailView):
+    model = State
+    template_name = 'city_list.html'
+    slug_field = 'name_slug'
+    def get_object(self):
+        return State.objects.get(name_slug=self.kwargs.get("state_slug"))
+    def get_context_data(self, **kwargs):
+        context = super(CityList, self).get_context_data(**kwargs)
+        context['state_totals'] = RefugeeReport.objects.filter(state=self.object).values('year').annotate(total=Sum('city_total')).order_by('year')
+        context['cities'] = City.objects.filter(state=self.object).order_by('name')
+        context['count_cities'] = len(context['cities'])
+        context['statewide_sum'] = RefugeeReport.objects.filter(state=self.object).aggregate(total=Sum('city_total'))
+        return context
 
 def country_list(request, state_slug, city_slug):
     state = State.objects.get(name_slug=state_slug)
@@ -63,3 +59,33 @@ def country_detail(request, state_slug, city_slug, country_slug):
     country_totals = Country.objects.filter(refugeereport__city=city).annotate(total=Sum('refugeereport__city_total')).order_by('-total')
     context = {'state': state, 'country': country, 'city': city, 'city_by_year' : city_by_year, 'all_refugee_total': all_refugee_total, 'city_refugee_total': city_refugee_total, 'reports': reports, 'country_totals': country_totals}
     return render(request, 'country_detail.html', context)
+
+"""
+
+#The isle of abandoned function based views
+
+def index(request):
+    cities = City.objects.order_by('name')
+    context = {'cities': cities}
+    return render(request, 'index.html', context)
+
+def resources_page(request):
+    return render(request, 'resources_page.html', {})
+
+def state_list(request):
+    state = State.objects.order_by('name')
+    cities = City.objects.order_by('name')
+    context = {'state': state, 'cities': cities}
+    return render(request, 'state_list.html', context)
+
+def city_list(request, state_slug):
+    state = State.objects.get(name_slug=state_slug)
+    state_totals = RefugeeReport.objects.filter(state=state).values('year').annotate(total=Sum('city_total')).order_by('year')
+    cities = City.objects.filter(state__name_slug=state_slug).order_by('name')
+    count_cities = len(cities)
+    statewide_sum = RefugeeReport.objects.filter(state=state).aggregate(total=Sum('city_total'))
+    context = {'state': state, 'cities': cities, 'state_totals': state_totals, 'count_cities' : count_cities, 'statewide_sum' : statewide_sum}
+    return render(request, 'city_list.html', context)
+
+
+"""
