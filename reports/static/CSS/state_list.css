@@ -87,3 +87,19 @@ p#bso {
   background-color: white;
   list-style: none;
 }
+
+button.btn.btn-default {
+  text-shadow: none !important;
+}
+
+span.input-group-button {
+  text-shadow: none !important;
+}
+
+.btn-default {
+  text-shadow: none !important;
+}
+
+.input-group-btn>.btn {
+  text-shadow: none !important;
+}

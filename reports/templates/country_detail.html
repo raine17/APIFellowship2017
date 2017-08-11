@@ -43,8 +43,8 @@
 {% endblock %}
 {% block content %}
 <div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
 
     <h1>Refugees resettled from {{ country }} in {{ city }}, {{ state }}</h1>
     <h3>{{ city_refugee_total.city_total__sum|intcomma }} refugees have been resettled in {{ city }} since 2002.</h3>
@@ -63,25 +63,25 @@
         {% endfor %}
       </tbody>
     </table>
-    <h6>Data from the <a href="http://ireports.wrapsnet.org/" target=blank>Refugee Processing Center</a> 2002-2017</h6>
+    <h6>Data from the Refugee Processing Center 2002-2017. For more information, see their <a href="http://ireports.wrapsnet.org/" target=blank>Interactive Reporting</a> and <a href="http://www.wrapsnet.org/about-us/about/" target=blank>About</a> pages.</h6>
   </div>
 </div>
 
 <br>
 
 <div class="row">
-<div class="col-md-4"></div>
-<div class="col-md-4">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <a href="/stories">Browse story angles</a>
+        <a href="/resources_page">Additional resources</a>
       </h3>
     </div>
     <div class="panel-body">
-      <p>Need inspiration or examples of refugee stories? Check out our list of potential story angles with published articles from newspapers across America.</p>
+      <p>This data from the Refugee Processing Center only shows a part of the complete picture — for example, it doesn't reflect births and deaths. Visit our resources page to get additional context and information.</p>
       <br>
-        <button type="button" class="btn btn-primary btn-xs center-block"><a href="/stories" id="btn">See stories</a></button>
+        <button type="button" class="btn btn-primary btn-xs center-block"><a href="/resources_page" id="btn">Get resources</a></button>
     </div>
   </div>
 </div>

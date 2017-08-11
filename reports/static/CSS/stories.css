@@ -207,3 +207,8 @@ button.btn.btn-primary.btn-xs.center-block:hover {
   color: #E4E9EC;
   border-color: #2E5266;
 }
+
+.nav>li>a>img#bso {
+  max-width: 50%;
+  max-height: 50%;
+}

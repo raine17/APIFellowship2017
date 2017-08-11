@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block title %}Story angles{% endblock %}
+
 {% block customstyle %}
 <link href="https://fonts.googleapis.com/css?family=Gudea|Lato" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'css/stories.css' %}"/>
 {% endblock %}
-{% block title %}Story angles{% endblock %}
+
 {% block content %}
 
 <html lang="en">
   <head>
-    <title>Story ideas</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   </head>
@@ -17,24 +19,19 @@
 <img src="{% static 'img/stories.png' %}" style="width:100%;" border="0" alt="Null">
 <br>
 <br>
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
+<!-- resources row 1 -->
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
       <br>
       <p id="body">Wondering how to tell an engaging refugee story? Here are a few different examples of refugee stories for inspiration. This is far from an exhaustive list, so we encourage you to do your own research based on your beat or coverage area.
       </p>
       <br>
       <br>
-    </div>
-
-<br>
-<br>
 
         <div class="row"></div>
-
-        <!-- resources row 1 -->
         <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-3">
+          <div class="col-sm-4">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -51,7 +48,7 @@
           </div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-sm-4">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -67,7 +64,7 @@
           </div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-sm-4">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -83,11 +80,15 @@
           </div>
           </div>
         </div>
+      </div>
+    </div>
 
         <!-- resources row 2 -->
         <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-3">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+        <div class="row">
+          <div class="col-sm-4">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -103,7 +104,7 @@
           </div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-sm-4">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -119,7 +120,7 @@
           </div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-sm-4">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -135,11 +136,15 @@
           </div>
           </div>
         </div>
+      </div>
+    </div>
 
         <!-- resources row 3 -->
         <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-3">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+        <div class="row">
+          <div class="col-sm-4">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -155,7 +160,7 @@
           </div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-sm-4">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -171,7 +176,7 @@
           </div>
           </div>
 
-        <div class="col-md-3">
+        <div class="col-sm-4">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">
@@ -188,5 +193,6 @@
         </div>
       </div>
     </div>
+  </div>
 
 {% endblock %}

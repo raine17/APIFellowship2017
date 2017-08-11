@@ -55,6 +55,7 @@ h3 a {
   font-family: 'Lato', 'Helvetica', sans-serif;
   color: #E4E9EC;
   border-color: #2E5266;
+  text-shadow: none !important;
 }
 
 .btn:hover {
@@ -62,15 +63,18 @@ h3 a {
   background-image: none;
   color: #E4E9EC;
   border-color: #2E5266;
+  text-shadow: none !important;
 }
 
 .button {
   color: #E4E9EC;
   background-color: #6E8898;
+  text-shadow: none !important;
 }
 
 .btn>a {
   text-decoration: none;
+  text-shadow: none !important;
 }
 
 .form-control:focus {
@@ -99,16 +103,19 @@ a#intro:hover {
 
 button.btn.btn-primary.btn-xs {
   align: center center center center !important;
+  text-shadow: none !important;
 }
 
 button.btn.btn-primary.btn-xs>a {
   font-family: 'Lato', 'Helvetica', sans-serif;
   color: #EBEFF1;
+  text-shadow: none !important;
 }
 
 button.btn.btn-primary.btn-xs>a:hover {
   font-family: 'Lato', 'Helvetica', sans-serif;
   color: #F5F7F8;
+  text-shadow: none !important;
 }
 
 .center-block #bso {
@@ -120,4 +127,20 @@ button.btn.btn-primary.btn-xs>a:hover {
 .input#autocomplete {
   background-color: white;
   list-style: none;
+}
+
+button.btn.btn-default {
+  text-shadow: none !important;
+}
+
+span.input-group-button {
+  text-shadow: none !important;
+}
+
+.btn-default {
+  text-shadow: none !important;
+}
+
+.input-group-btn>.btn {
+  text-shadow: none !important;
 }
