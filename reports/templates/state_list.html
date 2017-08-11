@@ -80,7 +80,7 @@ $(document).ready(function () {
                 </tr>
               </thead>
               <tbody>
-                {% for object in state %}
+                {% for object in state_list %}
                 <tr> <td><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></td></tr>
                 {% endfor %}
               </tbody>

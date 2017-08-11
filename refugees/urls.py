@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from reports import views
-from reports.views import Index
+from reports.views import Index, ResourcePage, CityList, StateList
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -29,11 +29,13 @@ urlpatterns = [
     url(r'^$', Index.as_view()),
     url(r'^background_info/$', views.background_info, name='background_info'),
     url(r'^about/$', views.about, name='about'),
-    url(r'^state_list/$', views.state_list),
-    url(r'^reports/(?P<state_slug>[\w-]+)/$', views.city_list),
+    url(r'^reports/$', StateList.as_view()),
+    #url(r'^reports/(?P<state_slug>[\w-]+)/$', views.city_list),
+    url(r'^reports/(?P<state_slug>[\w-]+)/$', CityList.as_view()),
     url(r'^reports/(?P<state_slug>[\w-]+)/(?P<city_slug>[\w-]+)/$', views.country_list),
     url(r'^reports/(?P<state_slug>[\w-]+)/(?P<city_slug>[\w-]+)/(?P<country_slug>[\w-]+)/$', views.country_detail),
     url(r'^admin/', admin.site.urls),
-    url(r'^resources_page/$', views.resources_page, name='resources_page'),
+    #url(r'^resources/$', views.resources_page, name='resources_page'),
+    url(r'^resources/$', ResourcePage.as_view()),
     url(r'^stories/$', views.stories, name='stories'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
