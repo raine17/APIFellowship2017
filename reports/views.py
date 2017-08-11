@@ -7,18 +7,17 @@ class Index(BuildableListView):
   template_name = "index.html"
   queryset = City.objects.order_by('name')
 
-class ResourcePage(BuildableTemplateView):
+class ResourcesPage(BuildableTemplateView):
     build_path = 'resources/index.html'
     template_name = 'resources_page.html'
 
-def background_info(request):
-    return render(request, 'background_info.html', {})
+class About(BuildableTemplateView):
+    build_path = 'about/index.html'
+    template_name = 'about.html'
 
-def about(request):
-    return render(request, 'about.html', {})
-
-def stories(request):
-    return render(request, 'stories.html', {})
+class Stories(BuildableTemplateView):
+    build_path = 'stories/index.html'
+    template_name = 'stories.html'
 
 class StateList(BuildableListView):
     template_name = 'state_list.html'
@@ -71,6 +70,12 @@ def index(request):
 
 def resources_page(request):
     return render(request, 'resources_page.html', {})
+
+def about(request):
+    return render(request, 'about.html', {})
+
+def stories(request):
+    return render(request, 'stories.html', {})
 
 def state_list(request):
     state = State.objects.order_by('name')
