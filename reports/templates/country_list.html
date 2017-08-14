@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
-{% block title %}Resettlement in {{ city }}{% endblock %}
+{% block title %}Resettlement in {{ city }}, {{ city.state }}{% endblock %}
 
 {% block javascript %}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -47,7 +47,7 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
 
-    <h1>{{ city }}, {{ state }}</h1>
+    <h1>{{ city }}, {{ city.state }}</h1>
 
     <h3>{{ all_refugee_total.city_total__sum|intcomma }} refugees have been resettled in {{ city }} since 2002.</h3>
 

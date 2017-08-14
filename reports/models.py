@@ -12,7 +12,7 @@ class State(models.Model):
     def __str__(self):
         return self.name
     def get_absolute_url(self):
-        return "/reports/%s" % (self.name_slug)
+        return "/reports/%s/" % (self.name_slug)
 
 class City(models.Model):
     state=models.ForeignKey(State, on_delete=models.CASCADE)
@@ -21,7 +21,7 @@ class City(models.Model):
     def __str__(self):
         return self.name
     def get_absolute_url(self):
-        return "/reports/%s/%s" % (self.state.name_slug, self.name_slug)
+        return "/reports/%s/%s/" % (self.state.name_slug, self.name_slug)
 
 class RefugeeReport(models.Model):
     country=models.ForeignKey(Country)
@@ -36,3 +36,13 @@ class RefugeeReport(models.Model):
         return "%s, %s from %s" % (self.city, self.state, self.year)
     def get_absolute_url(self):
         return "/reports/%s/%s/%s" % (self.city.name_slug, self.state.name_slug, self.year)
+
+class StateCityCountry(models.Model):
+    #This exists only to make Bakery happy. Don't use it for anything else.
+    state = models.ForeignKey(State)
+    city = models.ForeignKey(City)
+    country = models.ForeignKey(Country)
+    def __str__(self):
+        return "%s, %s, %s" % (self.state, self.city, self.country)
+    def get_absolute_url(self):
+        return "/reports/%s/%s/%s/" % (self.state.name_slug, self.city.name_slug, self.country.name_slug)

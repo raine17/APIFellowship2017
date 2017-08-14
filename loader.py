@@ -4,7 +4,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "refugees.settings")
 
 django.setup()
 
-from reports.models import Country, State, City, RefugeeReport
+from reports.models import Country, State, City, RefugeeReport, StateCityCountry
 
 from django.template.defaultfilters import slugify, urlize
 from django.core.exceptions import ObjectDoesNotExist
@@ -30,3 +30,6 @@ for row in reader:
 
     ref, refcreated = RefugeeReport.objects.get_or_create(country=reforiginid, state=refstateid, city=popcityid, year=cleanyear, city_total=row[6], state_total=row[2], country_total=row[4], all_countries=row[7])
     print(ref)
+
+    scc, scccreated = StateCityCountry.objects.get_or_create(state=ref.state, city=ref.city, country=ref.country)
+    print(scc)
