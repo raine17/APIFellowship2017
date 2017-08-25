@@ -42,9 +42,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a class="navbar-brand" href="#"><a href="/"><img src="{% static 'img/logo3.png' %}" border="0" alt="Null" id="bso"></a></a></li>
-        <li><a href="/state_list">Explore data</a></li>
-        <li><a href="/resources_page">Journalist resources</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/reports/">Explore data</a></li>
+        <li><a href="/resources/">Journalist resources</a></li>
+        <li><a href="/about/">About</a></li>
     </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -56,5 +56,15 @@
   <p id="footer"><img src="{% static 'img/API.png' %}" style="height: 20%; width:20%;" border="0" alt="Null"> <br> © 2017 all rights reserved.</p>
 </footer>
 {% endblock %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-105260957-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>
