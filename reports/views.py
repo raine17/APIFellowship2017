@@ -23,6 +23,10 @@ class StateList(BuildableListView):
     build_path = 'reports/index.html'
     template_name = 'state_list.html'
     queryset = State.objects.order_by('name')
+    def get_context_data(self, **kwargs):
+        context = super(StateList, self).get_context_data(**kwargs)
+        context['cities'] = City.objects.order_by('name')
+        return context
 
 class CityList(BuildableDetailView):
     model = State
@@ -40,10 +44,9 @@ class CountryList(BuildableDetailView):
     model = City
     template_name = 'country_list.html'
     slug_field = 'name_slug'
-    def get_object(self):
-        return City.objects.all()
     def get_context_data(self, **kwargs):
         context = super(CountryList, self).get_context_data(**kwargs)
+        context['city'] = City.objects.get(pk=self.object)
         context['countries'] = RefugeeReport.objects.filter(city=self.object)
         context['city_by_year'] = RefugeeReport.objects.filter(city=self.object).values('year').annotate(total=Sum('city_total')).order_by('year')
         context['all_refugee_total'] = RefugeeReport.objects.filter(city=self.object).aggregate(Sum('city_total'))
