@@ -46,8 +46,8 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
 
-    <h1>Refugees resettled from {{ country }} in {{ city }}, {{ state }}</h1>
-    <h3>{{ city_refugee_total.city_total__sum|intcomma }} refugees have been resettled in {{ city }} since 2002.</h3>
+    <h1>Refugees resettled from {{ country }} in {{ city.name }}, {{ state }}</h1>
+    <h3>{{ city_refugee_total.city_total__sum|intcomma }} refugees have been resettled in {{ city.name }} since 2002.</h3>
 
     <div id="chart" style="width: 100%"></div>
 

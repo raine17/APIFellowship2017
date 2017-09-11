@@ -9,7 +9,7 @@ from reports.models import Country, State, City, RefugeeReport, StateCityCountry
 from django.template.defaultfilters import slugify, urlize
 from django.core.exceptions import ObjectDoesNotExist
 
-reader = csv.reader(open("refugees0216-4.csv"), dialect=csv.excel)
+reader = csv.reader(open("refugees0216-5.csv"), dialect=csv.excel)
 next(reader)
 for row in reader:
 

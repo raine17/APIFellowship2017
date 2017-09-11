@@ -32,6 +32,7 @@ class CityList(BuildableDetailView):
     model = State
     template_name = 'city_list.html'
     slug_field = 'name_slug'
+    slug_url_kwarg = 'state_slug'
     def get_context_data(self, **kwargs):
         context = super(CityList, self).get_context_data(**kwargs)
         context['state_totals'] = RefugeeReport.objects.filter(state__name_slug=self.kwargs.get("state_slug")).values('year').annotate(total=Sum('city_total')).order_by('year')
@@ -43,10 +44,23 @@ class CityList(BuildableDetailView):
 class CountryList(BuildableDetailView):
     model = City
     template_name = 'country_list.html'
-    slug_field = 'name_slug'
+    queryset = City.objects.all()
+
+    def set_kwargs(self, obj):
+        self.kwargs = {
+            'state_slug': obj.state.name_slug,
+            'city_slug': obj.name_slug,
+        }
+
+    def get_object(self, queryset=None):
+        print(self.kwargs['state_slug'], self.kwargs['city_slug'])
+        return self.queryset.get(
+            state__name_slug=self.kwargs['state_slug'],
+            name_slug=self.kwargs['city_slug']
+        )
     def get_context_data(self, **kwargs):
         context = super(CountryList, self).get_context_data(**kwargs)
-        context['city'] = City.objects.get(pk=self.object)
+        #context['city'] = City.objects.get(pk=self.object)
         context['countries'] = RefugeeReport.objects.filter(city=self.object)
         context['city_by_year'] = RefugeeReport.objects.filter(city=self.object).values('year').annotate(total=Sum('city_total')).order_by('year')
         context['all_refugee_total'] = RefugeeReport.objects.filter(city=self.object).aggregate(Sum('city_total'))
@@ -56,12 +70,22 @@ class CountryList(BuildableDetailView):
 class CountryDetail(BuildableDetailView):
     model = StateCityCountry
     template_name = 'country_detail.html'
+    def set_kwargs(self, obj):
+        self.kwargs = {
+            'state_slug': obj.state.name_slug,
+            'city_slug': obj.city.name_slug,
+            'country_slug': obj.country.name_slug,
+        }
+
+    def get_object(self, **kwargs):
+        print(self.kwargs['state_slug'], self.kwargs['city_slug'], self.kwargs['country_slug'])
+        return StateCityCountry.objects.get(state__name_slug=self.kwargs.get("state_slug"), city__name_slug=self.kwargs.get("city_slug"), country__name_slug=self.kwargs.get("country_slug") )
     def get_context_data(self, **kwargs):
         context = super(CountryDetail, self).get_context_data(**kwargs)
         context['state'] = State.objects.get(name_slug=self.object.state.name_slug)
         context['country'] = Country.objects.get(name_slug=self.object.country.name_slug)
         context['city'] = City.objects.get(id=self.object.city.id)
-        context['city_by_year'] = RefugeeReport.objects.filter(city=self.object.city, state=self.object.state).values('year').annotate(total=Sum('city_total')).order_by('year')
+        context['city_by_year'] = RefugeeReport.objects.filter(city=self.object.city, state=self.object.state, country=self.object.country).values('year').annotate(total=Sum('city_total')).order_by('year')
         context['all_refugee_total'] = RefugeeReport.objects.filter(city=self.object.city, state=self.object.state).aggregate(Sum('city_total'))
         context['city_refugee_total'] = RefugeeReport.objects.filter(country=self.object.country, city=self.object.city, state=self.object.state).aggregate(Sum('city_total'))
         context['reports'] = RefugeeReport.objects.filter(country=self.object.country, city=self.object.city, state=self.object.state).order_by('year')

@@ -9,6 +9,8 @@ class Country(models.Model):
 class State(models.Model):
     name=models.CharField(max_length=255, blank=True, null=True)
     name_slug=models.SlugField()
+    class Meta:
+        ordering = ['name']
     def __str__(self):
         return self.name
     def get_absolute_url(self):
@@ -18,8 +20,10 @@ class City(models.Model):
     state=models.ForeignKey(State, on_delete=models.CASCADE)
     name=models.CharField(max_length=255, blank=True, null=True)
     name_slug=models.SlugField()
+    class Meta:
+        ordering = ['state__name', 'name']
     def __str__(self):
-        return self.name
+        return "%s, %s" % (self.name, self.state.name)
     def get_absolute_url(self):
         return "/reports/%s/%s/" % (self.state.name_slug, self.name_slug)
 
