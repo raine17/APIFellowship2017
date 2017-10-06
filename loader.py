@@ -23,7 +23,10 @@ for row in reader:
 
     popcity = row[5]
     popcity_slug = slugify(popcity)
-    popcityid, popcityadded = City.objects.get_or_create(state=refstateid, name=popcity, name_slug=popcity_slug)
+    try:
+        popcityid = City.objects.get(state=refstateid, name_slug=popcity_slug)
+    except:
+        popcityid, popcityadded = City.objects.get_or_create(state=refstateid, name=popcity, name_slug=popcity_slug)
 
     cleanyear = row[1]
     cleanyear = cleanyear.replace('CY ', '')
